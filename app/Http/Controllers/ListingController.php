@@ -4,16 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ListingController extends Controller
 {
-    public function index() {
-        return view('listings.index',[
+    public function index(): View
+    {
+        return view('listings.index', [
             'listings' => Listing::all()
         ]);
     }
 
-    public function show(Listing $listing){
+    public function show(Listing $listing): View
+    {
         return view('listings.show', [
             'listing' => $listing
         ]);

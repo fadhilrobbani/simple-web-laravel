@@ -1,5 +1,4 @@
-@extends('layout')
-@section('content')
+<x-layout>
     <a href="/" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
     </a>
     <div class="mx-4">
@@ -9,7 +8,7 @@
 
                 <h3 class="text-2xl mb-2">{{ $listing->title }}</h3>
                 <div class="text-xl font-bold mb-4">{{ $listing->company }}</div>
-                <x-listing-tag :tagsCsv='$listing->tags'/>
+                <x-listing-tag :tagsCsv='$listing->tags' />
                 <div class="text-lg my-4">
                     <i class="fa-solid fa-location-dot"></i> {{ $listing->location }}
                 </div>
@@ -19,7 +18,7 @@
                         Job Description
                     </h3>
                     <div class="text-lg space-y-6">
-                      {{ $listing->description }}
+                        {{ $listing->description }}
 
                         <a href="{{ $listing->email }}"
                             class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"><i
@@ -35,4 +34,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-layout>
